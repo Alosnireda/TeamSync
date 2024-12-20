@@ -165,7 +165,7 @@
             {
                 description: description,
                 deadline: deadline,
-                status: "active",
+                status: u"active",
                 creator: tx-sender,
                 points: points,
                 votes-required: (/ (* (get member-count group) (get threshold group)) u100),
@@ -213,7 +213,7 @@
          (creator-details (unwrap! (get-member-details group-id (get creator task)) ERR-NOT-MEMBER)))
         (map-set tasks
             { group-id: group-id, task-id: task-id }
-            (merge task { status: "completed" })
+            (merge task { status: u"completed" })
         )
         (map-set group-members
             { group-id: group-id, member: (get creator task) }
@@ -239,7 +239,7 @@
             {
                 task-id: task-id,
                 creator: tx-sender,
-                status: "active",
+                status: u"active",
                 resolution-deadline: resolution-deadline,
                 votes-for: u0,
                 votes-against: u0
@@ -264,7 +264,7 @@
             {
                 description: description,
                 amount: amount,
-                status: "pending",
+                status: u"pending",
                 approvals: u0,
                 paid: false
             }
